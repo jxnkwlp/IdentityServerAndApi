@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi
-{
+{ 
     public class TestController : ControllerBase
     {
+        [HttpGet]
         [Route("test")]
         [Authorize(AuthenticationSchemes = "Bearer")]
         public IActionResult Get()

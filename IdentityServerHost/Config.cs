@@ -24,6 +24,19 @@ namespace IdentityServerHost
                 AllowedScopes = { "openid", "profile", "email", "api1" },
                 AllowedCorsOrigins = { "http://localhost:5000" }
             },
+
+            new Client
+            {
+                ClientId = "swagger",
+                AllowedGrantTypes = GrantTypes.Implicit,
+                AllowAccessTokensViaBrowser = true,
+                RedirectUris = {
+                    "http://localhost:5000/swagger/o2c.html"
+                },
+                PostLogoutRedirectUris = { "http://localhost:5000/swagger/" },
+                AllowedScopes = { "openid", "profile", "email", "api1" },
+                AllowedCorsOrigins = { "http://localhost:5000" }
+            },
         };
 
         public static IEnumerable<IdentityResource> IdentityResources = new List<IdentityResource>
